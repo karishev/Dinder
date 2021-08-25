@@ -1,4 +1,4 @@
-import 'package:dinder/screens/dining_buddy_screen/dining_buddy_screen.dart';
+import 'package:dinder/screens/nav_bar_app/nav_bar_app.dart';
 import 'package:dinder/theme/main_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -72,10 +72,11 @@ Widget _buildAuthorizationScreen(BuildContext context) {
             ),
             _button(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DiningBuddyScreen()));
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => NavBarApp()),
+                    (Route<dynamic> route) => false,
+                  );
                 },
                 width: 188,
                 height: 44,
