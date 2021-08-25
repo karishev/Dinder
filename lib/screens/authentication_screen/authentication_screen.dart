@@ -70,31 +70,25 @@ Widget _buildAuthorizationScreen(BuildContext context) {
                 ),
               ),
             ),
-            FlatButton(
-              onPressed: () {},
-              child: Text(
-                'Forgot Password',
-                style: TextStyle(color: Colors.blue, fontSize: 15),
-              ),
-            ),
-            Container(
-              height: 50,
-              width: 250,
-              decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(10)),
-              child: FlatButton(
-                onPressed: () {
+            _button(
+                onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => DiningBuddyScreen()));
                 },
-                child: Text(
-                  'Login',
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              ),
-            ),
+                width: 188,
+                height: 44,
+                text: "Login",
+                fontSize: 15,
+                isMainButton: true),
+            _button(
+                onTap: () {},
+                width: 133,
+                height: 44,
+                text: "Forgot Password",
+                fontSize: 12,
+                isMainButton: false),
             SizedBox(
               height: 130,
             ),
@@ -113,6 +107,28 @@ Widget _buildAuthorizationScreen(BuildContext context) {
           ],
         ),
       ],
+    ),
+  );
+}
+
+TextButton _button(
+    {Function onTap,
+    double height,
+    double width,
+    String text,
+    double fontSize,
+    bool isMainButton}) {
+  final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+    minimumSize: Size(width, height),
+    backgroundColor: isMainButton ? Colors.blue : ColorPalette.background,
+    padding: const EdgeInsets.all(0),
+  );
+  return TextButton(
+    style: flatButtonStyle,
+    onPressed: onTap,
+    child: Text(
+      text,
+      style: TextStyle(color: Colors.white, fontSize: fontSize),
     ),
   );
 }
