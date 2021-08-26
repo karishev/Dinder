@@ -20,7 +20,7 @@ class _NavBarAppState extends State<NavBarApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Dining Buddy')),
+      appBar: AppBar(title: Text('Dinder')),
       body: IndexedStack(
         children: screens,
         index: currentIndex,

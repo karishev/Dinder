@@ -1,10 +1,13 @@
 part of 'dining_buddy_bloc.dart';
 
 abstract class DiningBuddyState extends Equatable {
-  const DiningBuddyState();
-  
+  final int toggleValue;
+  DiningBuddyState({this.toggleValue});
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [toggleValue];
 }
 
-class DiningBuddyInitial extends DiningBuddyState {}
+class TakerChosenState extends DiningBuddyState {}
+
+class GiverChosenState extends DiningBuddyState {}

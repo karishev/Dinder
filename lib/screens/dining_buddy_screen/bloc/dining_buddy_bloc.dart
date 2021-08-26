@@ -7,12 +7,19 @@ part 'dining_buddy_event.dart';
 part 'dining_buddy_state.dart';
 
 class DiningBuddyBloc extends Bloc<DiningBuddyEvent, DiningBuddyState> {
-  DiningBuddyBloc() : super(DiningBuddyInitial());
+  DiningBuddyBloc() : super(TakerChosenState());
+  bool toggleValue = false;
 
   @override
   Stream<DiningBuddyState> mapEventToState(
     DiningBuddyEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    if (event is GiverChosenEvent) {
+      toggleValue = !toggleValue;
+      yield GiverChosenState();
+    } else if (event is TakerChosenEvent) {
+      toggleValue = !toggleValue;
+      yield TakerChosenState();
+    }
   }
 }
