@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:math' show pi;
 import 'package:dinder/data/explore_json.dart';
 import 'package:dinder/data/icons.dart';
 import 'package:dinder/screens/dining_buddy_screen/swipe_app.dart';
@@ -18,11 +20,21 @@ class DiningBuddyScreen extends StatefulWidget {
 
 class _DiningBuddyScreenState extends State<DiningBuddyScreen> {
   List<SwipeCard> cards = [
-    SwipeCard(imageUrl: explore_json[0]['img']),
-    SwipeCard(imageUrl: explore_json[1]['img']),
-    SwipeCard(imageUrl: explore_json[2]['img']),
-    SwipeCard(imageUrl: explore_json[3]['img']),
-    SwipeCard(imageUrl: explore_json[4]['img']),
+    SwipeCard(
+      imageUrl: explore_json[0]['img'],
+    ),
+    SwipeCard(
+      imageUrl: explore_json[1]['img'],
+    ),
+    SwipeCard(
+      imageUrl: explore_json[2]['img'],
+    ),
+    SwipeCard(
+      imageUrl: explore_json[3]['img'],
+    ),
+    SwipeCard(
+      imageUrl: explore_json[4]['img'],
+    ),
   ];
 
   @override
@@ -112,7 +124,23 @@ class _DiningBuddyScreenState extends State<DiningBuddyScreen> {
                     icons[index]['icon'],
                     width: icons[index]['icon_size'],
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    if (index == 0) {
+                      // TODO: return the card
+                    } else if (index == 1) {
+                      // TODO: disliked the card
+                      BlocProvider.of<DiningBuddyBloc>(context)
+                        ..add(UserDislikedEvent());
+                    } else if (index == 2) {
+                      // TODO: favour the card
+                    } else if (index == 3) {
+                      // TODO: liked the card
+                      BlocProvider.of<DiningBuddyBloc>(context)
+                        ..add(UserLikedEvent());
+                    } else if (index == 4) {
+                      // TODO: superliked the card
+                    }
+                  },
                 ),
               );
             }),

@@ -8,3 +8,7 @@ abstract class DiningBuddyEvent extends Equatable {
 class TakerChosenEvent extends DiningBuddyEvent {}
 
 class GiverChosenEvent extends DiningBuddyEvent {}
+
+class UserLikedEvent extends DiningBuddyEvent {}
+
+class UserDislikedEvent extends DiningBuddyEvent {}

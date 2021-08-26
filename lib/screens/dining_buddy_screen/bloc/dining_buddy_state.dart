@@ -11,3 +11,7 @@ abstract class DiningBuddyState extends Equatable {
 class TakerChosenState extends DiningBuddyState {}
 
 class GiverChosenState extends DiningBuddyState {}
+
+class UserLikedState extends DiningBuddyState {}
+
+class UserDisikedState extends DiningBuddyState {}

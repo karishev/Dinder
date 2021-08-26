@@ -20,6 +20,10 @@ class DiningBuddyBloc extends Bloc<DiningBuddyEvent, DiningBuddyState> {
     } else if (event is TakerChosenEvent) {
       toggleValue = !toggleValue;
       yield TakerChosenState();
+    } else if (event is UserLikedEvent) {
+      yield UserLikedState();
+    } else if (event is UserDislikedEvent) {
+      yield UserDisikedState();
     }
   }
 }

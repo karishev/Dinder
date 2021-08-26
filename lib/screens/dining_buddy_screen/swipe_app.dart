@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_swipable/flutter_swipable.dart';
 
 class SwipeCard extends StatelessWidget {
   final String imageUrl;
+
   SwipeCard({this.imageUrl});
 
   @override
