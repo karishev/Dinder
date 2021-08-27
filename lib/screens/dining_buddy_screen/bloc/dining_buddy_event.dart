@@ -12,3 +12,7 @@ class GiverChosenEvent extends DiningBuddyEvent {}
 class UserLikedEvent extends DiningBuddyEvent {}
 
 class UserDislikedEvent extends DiningBuddyEvent {}
+
+class UserPressedLikeEvent extends DiningBuddyEvent {}
+
+class UserPressedDislikeEvent extends DiningBuddyEvent {}

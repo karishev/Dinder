@@ -15,3 +15,7 @@ class GiverChosenState extends DiningBuddyState {}
 class UserLikedState extends DiningBuddyState {}
 
 class UserDisikedState extends DiningBuddyState {}
+
+class UserPressedLikeState extends DiningBuddyState {}
+
+class UserPressedDislikeState extends DiningBuddyState {}

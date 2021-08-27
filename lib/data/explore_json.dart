@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 const List explore_json = [
   {
     "img": "lib/images/girls/img_1.jpeg",
@@ -60,3 +62,32 @@ const List explore_json = [
     "likes": ["Swag", "Dancing"],
   },
 ];
+
+enum Major { computerScience, math, business, interactiveMedia, music }
+
+class Person {
+  final String name;
+  final String surname;
+  int age;
+  Major major;
+  String imageUrl;
+
+  Person({this.name, this.surname, this.age, this.major, this.imageUrl});
+
+  String getMajor() {
+    switch (major) {
+      case Major.computerScience:
+        return 'Computer Science';
+      case Major.math:
+        return 'Mathematics';
+      case Major.business:
+        return 'Business';
+      case Major.interactiveMedia:
+        return 'Interactive Media';
+      case Major.music:
+        return 'Music';
+      default:
+        return 'Undeclared';
+    }
+  }
+}

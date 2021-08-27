@@ -24,6 +24,10 @@ class DiningBuddyBloc extends Bloc<DiningBuddyEvent, DiningBuddyState> {
       yield UserLikedState();
     } else if (event is UserDislikedEvent) {
       yield UserDisikedState();
+    } else if (event is UserPressedLikeEvent) {
+      yield UserPressedLikeState();
+    } else if (event is UserPressedDislikeEvent) {
+      yield UserPressedDislikeState();
     }
   }
 }
