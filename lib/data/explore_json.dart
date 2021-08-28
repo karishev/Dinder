@@ -90,4 +90,8 @@ class Person {
         return 'Undeclared';
     }
   }
+
+  String getAge() {
+    return age.toString();
+  }
 }

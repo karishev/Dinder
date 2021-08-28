@@ -90,18 +90,18 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.22.0"
-  flutter_swipable:
-    dependency: "direct main"
-    description:
-      name: flutter_swipable
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_tindercard:
+    dependency: "direct main"
+    description:
+      name: flutter_tindercard
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
   mask_text_input_formatter:
     dependency: "direct main"
     description:

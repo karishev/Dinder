@@ -20,20 +20,6 @@ class _NavBarAppState extends State<NavBarApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              'lib/images/app_logo.png',
-              fit: BoxFit.fitHeight,
-              height: 30,
-            ),
-          ],
-        ),
-      ),
       body: IndexedStack(
         children: screens,
         index: currentIndex,
