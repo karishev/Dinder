@@ -12,5 +12,9 @@ class AuthorizationBloc extends Bloc<AuthorizationEvent, AuthorizationState> {
   @override
   Stream<AuthorizationState> mapEventToState(
     AuthorizationEvent event,
-  ) async* {}
+  ) async* {
+    if (event is SignupScreenOpenEvent) {
+      yield SignupScreenShowupState();
+    }
+  }
 }

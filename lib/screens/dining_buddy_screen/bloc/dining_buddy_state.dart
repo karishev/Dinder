@@ -8,6 +8,11 @@ abstract class DiningBuddyState extends Equatable {
   List<Object> get props => [toggleValue];
 }
 
+class AppLaunchedState extends DiningBuddyState {
+  final List<Person> loadedPeople;
+  AppLaunchedState({this.loadedPeople});
+}
+
 class TakerChosenState extends DiningBuddyState {}
 
 class GiverChosenState extends DiningBuddyState {}

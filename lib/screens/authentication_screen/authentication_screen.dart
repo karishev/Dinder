@@ -1,3 +1,4 @@
+import 'package:dinder/screens/authentication_screen/signup_screen.dart';
 import 'package:dinder/screens/nav_bar_app/nav_bar_app.dart';
 import 'package:dinder/theme/main_theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -100,11 +101,15 @@ Widget _buildAuthorizationScreen(BuildContext context) {
               children: [
                 Text('New User? ', style: TextStyle(color: Colors.white)),
                 FlatButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(color: Colors.white),
-                    )),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => SignupScreen()));
+                  },
+                  child: Text(
+                    "Sign Up",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ],
             )
           ],
@@ -123,7 +128,8 @@ TextButton _button(
     bool isMainButton}) {
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
     minimumSize: Size(width, height),
-    backgroundColor: isMainButton ? Colors.blue : ColorPalette.background,
+    backgroundColor:
+        isMainButton ? ColorPalette.tabbarBackground : ColorPalette.background,
     padding: const EdgeInsets.all(0),
   );
   return TextButton(
@@ -131,7 +137,7 @@ TextButton _button(
     onPressed: onTap,
     child: Text(
       text,
-      style: TextStyle(color: Colors.white, fontSize: fontSize),
+      style: TextStyle(color: ColorPalette.textBody, fontSize: fontSize),
     ),
   );
 }

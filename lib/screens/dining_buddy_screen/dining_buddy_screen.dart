@@ -10,34 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/dining_buddy_bloc.dart';
 import 'package:flutter_tindercard/flutter_tindercard.dart';
 
-List<Person> people = [
-  Person(
-      age: 17,
-      name: 'Akhat',
-      surname: 'Suleimenov',
-      major: Major.computerScience,
-      imageUrl: explore_json[0]['img']),
-  Person(
-      age: 23,
-      name: 'China',
-      surname: 'Karishev',
-      major: Major.business,
-      imageUrl: explore_json[1]['img']),
-  Person(
-      age: 20,
-      name: 'Makha',
-      surname: 'Familya',
-      major: Major.math,
-      imageUrl: explore_json[2]['img']),
-  Person(
-      age: 19, name: 'Max', surname: 'Sat', imageUrl: explore_json[3]['img']),
-  Person(
-      age: 19, name: 'Max', surname: 'Sat', imageUrl: explore_json[3]['img']),
-  Person(
-      age: 19, name: 'Max', surname: 'Sat', imageUrl: explore_json[3]['img']),
-  Person(
-      age: 19, name: 'Max', surname: 'Sat', imageUrl: explore_json[3]['img']),
-];
+List<Person> people = [];
 
 class DiningBuddyScreen extends StatefulWidget {
   DiningBuddyScreen({Key key}) : super(key: key);
@@ -52,7 +25,7 @@ class _DiningBuddyScreenState extends State<DiningBuddyScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<DiningBuddyBloc>(
-      create: (context) => DiningBuddyBloc(),
+      create: (context) => DiningBuddyBloc()..add(AppLaunchedEvent()),
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: ColorPalette.background,
@@ -81,8 +54,10 @@ class _DiningBuddyScreenState extends State<DiningBuddyScreen> {
         body: BlocBuilder<DiningBuddyBloc, DiningBuddyState>(
           builder: (context, state) {
             print(state);
-            if (state is UserLikedState) {
-            } else if (state is UserDislikedEvent) {}
+
+            if (state is AppLaunchedState) {
+              people = state.loadedPeople;
+            }
             return _buildBody(context);
           },
         ),
@@ -110,14 +85,12 @@ class _DiningBuddyScreenState extends State<DiningBuddyScreen> {
             rollingInfoRight: const RollingIconInfo(
               backgroundColor: Colors.greenAccent,
               icon: Icons.free_breakfast,
-              text: Text('Taker'),
+              text: Text('Hungry'),
             ),
             rollingInfoLeft: const RollingIconInfo(
               backgroundColor: Colors.blueAccent,
               icon: Icons.monetization_on,
-              text: Text(
-                'Giver',
-              ),
+              text: Text('Have swipes'),
             ),
           ),
         ),

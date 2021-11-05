@@ -6,3 +6,5 @@ abstract class AuthorizationEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class SignupScreenOpenEvent extends AuthorizationEvent {}

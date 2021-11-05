@@ -5,6 +5,8 @@ abstract class DiningBuddyEvent extends Equatable {
   List<Object> get props => [];
 }
 
+class AppLaunchedEvent extends DiningBuddyEvent {}
+
 class TakerChosenEvent extends DiningBuddyEvent {}
 
 class GiverChosenEvent extends DiningBuddyEvent {}

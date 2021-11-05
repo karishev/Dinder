@@ -1,3 +1,4 @@
+import 'package:dinder/screens/authentication_screen/authentication_screen.dart';
 import 'package:dinder/theme/main_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -176,7 +177,14 @@ class ProfileScreen extends StatelessWidget {
                 child: Text("Logout"),
               ),
               borderRadius: BorderRadius.circular(8),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => AuthenticationScreen()),
+                  (Route<dynamic> route) => false,
+                );
+              },
             ),
           ),
         ],

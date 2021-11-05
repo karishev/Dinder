@@ -10,3 +10,5 @@ abstract class AuthorizationState extends Equatable {
 class AuthorizationInitial extends AuthorizationState {}
 
 class AuthorizationShowupState extends AuthorizationState {}
+
+class SignupScreenShowupState extends AuthorizationState {}
