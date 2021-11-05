@@ -66,13 +66,22 @@ const List explore_json = [
 enum Major { computerScience, math, business, interactiveMedia, music }
 
 class Person {
+  final int id;
   final String name;
   final String surname;
+  List<Person> likedPeople = [];
   int age;
   Major major;
   String imageUrl;
 
-  Person({this.name, this.surname, this.age, this.major, this.imageUrl});
+  Person(
+      {this.id,
+      this.name,
+      this.surname,
+      this.age,
+      this.major,
+      this.imageUrl,
+      this.likedPeople});
 
   String getMajor() {
     switch (major) {

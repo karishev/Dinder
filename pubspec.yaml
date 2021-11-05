@@ -53,6 +53,7 @@ flutter:
   assets:
     - lib/images/
     - lib/images/girls/
+    - lib/images/default_avatar_men.svg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
