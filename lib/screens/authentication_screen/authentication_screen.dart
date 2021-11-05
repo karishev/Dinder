@@ -44,6 +44,7 @@ Widget _buildAuthorizationScreen(BuildContext context) {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
               child: TextField(
+                style: TextStyle(color: ColorPalette.textBody),
                 decoration: InputDecoration(
                   labelText: 'User Name',
                   hintText: 'Enter valid mail id as abc@nyu.edu',
@@ -58,6 +59,7 @@ Widget _buildAuthorizationScreen(BuildContext context) {
             Padding(
               padding: const EdgeInsets.all(20),
               child: TextField(
+                style: TextStyle(color: ColorPalette.textBody),
                 obscureText: true,
                 decoration: InputDecoration(
                   focusedBorder: new OutlineInputBorder(
