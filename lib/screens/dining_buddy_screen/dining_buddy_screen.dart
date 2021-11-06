@@ -1,6 +1,9 @@
 import 'dart:math' show pi;
 import 'package:dinder/data/explore_json.dart';
 import 'package:dinder/data/icons.dart';
+import 'package:dinder/models/message.dart';
+import 'package:dinder/screens/message/messages.dart';
+import 'package:dinder/screens/message/widget/pageTurn.dart';
 import 'package:dinder/theme/main_theme.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rolling_switch/rolling_switch.dart';
@@ -31,7 +34,7 @@ class _DiningBuddyScreenState extends State<DiningBuddyScreen> {
           backgroundColor: ColorPalette.background,
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {pageTurn(Messages(), context); },
               icon: Icon(
                 Icons.send,
                 color: ColorPalette.tabbarText,

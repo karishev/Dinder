@@ -35,6 +35,11 @@ dependencies:
   flutter_svg: ^0.22.0
   rolling_switch: ^0.0.2
   flutter_tindercard: ^0.2.0
+  firebase_core: ^0.3.4
+  firebase_auth: ^0.8.4+4
+  cloud_firestore: ^0.9.13+1
+  extended_image: ^0.7.2
+  timeago: ^2.0.26  
 
 dev_dependencies:
   flutter_test:
