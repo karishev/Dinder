@@ -1,6 +1,6 @@
-# dinder
+# Dinder
 
-A new Flutter project.
+DInder is designed to help students that are low on meal swipes(Seeker) to find people that can provide them(Giver). Working only for NYUAD students.
 
 ## Getting Started
 
